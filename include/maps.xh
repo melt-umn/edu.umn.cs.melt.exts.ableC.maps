@@ -1,0 +1,5 @@
+#pragma once
+
+V map_get(map<K, V>, K);
+
+/* vim: set ft=c: */

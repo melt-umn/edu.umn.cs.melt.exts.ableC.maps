@@ -7,7 +7,7 @@ imports edu:umn:cs:melt:exts:ableC:maps:src:abstractsyntax as abs;
 terminal Map_t 'map' lexer classes {Ckeyword};
 
 concrete productions top::TypeSpecifier_c
-| Map_t LessThan_t TypeName_c Comma_t TypeName_c GreaterThan_t
+| 'map' '<' TypeName_c ',' TypeName_c '>'
 {
   top.realTypeSpecifiers = [errorTypeExpr([])];
   top.preTypeSpecifiers = [];
