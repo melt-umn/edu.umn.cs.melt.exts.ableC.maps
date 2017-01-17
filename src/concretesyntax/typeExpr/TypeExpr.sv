@@ -1,4 +1,4 @@
-grammar edu:umn:cs:melt:exts:ableC:maps:src:concretesyntax;
+grammar edu:umn:cs:melt:exts:ableC:maps:src:concretesyntax:typeExpr;
 
 imports edu:umn:cs:melt:ableC:concretesyntax;
 imports edu:umn:cs:melt:ableC:abstractsyntax;
