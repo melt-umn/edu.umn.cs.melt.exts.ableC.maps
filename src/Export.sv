@@ -1,4 +1,4 @@
-grammar edu:umn:cs:melt:exts:ableC:skeleton:src;
+grammar edu:umn:cs:melt:exts:ableC:maps:src;
 
-exports edu:umn:cs:melt:exts:ableC:skeleton:src:abstractsyntax;
-exports edu:umn:cs:melt:exts:ableC:skeleton:src:concretesyntax;
+exports edu:umn:cs:melt:exts:ableC:maps:src:abstractsyntax;
+exports edu:umn:cs:melt:exts:ableC:maps:src:concretesyntax;

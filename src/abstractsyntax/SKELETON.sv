@@ -1,20 +1,20 @@
-grammar edu:umn:cs:melt:exts:ableC:skeleton:src:abstractsyntax;
+grammar edu:umn:cs:melt:exts:ableC:maps:src:abstractsyntax;
 
 imports edu:umn:cs:melt:ableC:abstractsyntax;
 
 
-abstract production skeleton
+abstract production maps
 s::Stmt ::= loc::Location
 {
   local printStmts :: [Stmt] 
-    = map (mkSkeletonLinePrint(loc,_), skeletonLines);
+    = map (mkSkeletonLinePrint(loc,_), mapsLines);
 
   forwards to 
     foldl1 (seqStmt, printStmts);
 
-  -- The skeleton, as a list of strings.  The need to escape
+  -- The maps, as a list of strings.  The need to escape
   -- backslashes and double quotes obscures things a bit.
-  local skeletonLines :: [ String ] =
+  local mapsLines :: [ String ] =
    [ "                 .-\\\"```\\\"-.     ",
      "                /         \\\\    ",
      "                |  _   _  |    ",
@@ -62,10 +62,10 @@ s::Stmt ::= loc::Location
 }
 
 function mkSkeletonLinePrint
-Stmt ::= loc::Location skeletonLine::String
+Stmt ::= loc::Location mapsLine::String
 {
   local strForPrintf :: String =
-    "\"" ++ skeletonLine ++ "\\n\"" ;
+    "\"" ++ mapsLine ++ "\\n\"" ;
 
   return
     exprStmt(
