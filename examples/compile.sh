@@ -9,7 +9,7 @@
 # Erm, yeah, let's add this...
 set -e
 
-java -jar ../artifact/ableC.jar $1
+java -jar ../artifact/ableC.jar $1 ${CFLAGS}
 
 # extract the base filename, everything before the dot (.)
 
@@ -20,4 +20,4 @@ basefilename="${filename_withoutpath%.*}"
 
 cfile="${basefilename}.c"
 
-gcc -lgc ${cfile}
+gcc ${CFLAGS} -lgc ${cfile}
