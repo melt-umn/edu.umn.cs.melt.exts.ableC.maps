@@ -1,5 +1,44 @@
-#pragma once
+#ifndef _MAPS_XH
+#define _MAPS_XH
 
-V map_get(map<K, V>, K);
+#include <gc.h>
+
+#include <stdlib.h>
+#include <string.h>
+
+struct __attribute__((refId("edu:umn:cs:melt:exts:ableC:maps:_map_struct"))) _map_struct {
+    size_t size;
+    size_t keySize, valSize;
+    struct _map_node_struct* data;
+};
+struct __attribute__((refId("edu:umn:cs:melt:exts:ableC:maps:_map_node_struct"))) _map_node_struct {
+    void* data;
+    struct _map_node_struct* next;
+};
+
+typedef struct _map_struct* _map;
+
+static _map _map_new(size_t size, size_t keySize, size_t valSize) {
+    _map result = GC_malloc(sizeof(struct _map_struct));
+    *result = (struct _map_struct) {
+        .size = size,
+        .keySize = keySize,
+        .valSize = valSize,
+        .data = GC_malloc(size * sizeof(struct _map_node_struct)),
+    };
+	memset(result->data, 0x00, size * sizeof(struct _map_node_struct));
+    return result;
+}
+
+static void* _map_get(_map m, void* key) {
+    // TODO
+    return NULL;
+}
+
+static void _map_put(_map m, void* key, void* value) {
+    // TODO
+}
+
+#endif
 
 /* vim: set ft=c: */

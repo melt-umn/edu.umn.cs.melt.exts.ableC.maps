@@ -6,6 +6,9 @@
 # Of course, if the use of 'cut' below fails for you, then just run
 # the commands individually by hand.
 
+# Erm, yeah, let's add this...
+set -e
+
 java -jar ../artifact/ableC.jar $1
 
 # extract the base filename, everything before the dot (.)
@@ -17,4 +20,4 @@ basefilename="${filename_withoutpath%.*}"
 
 cfile="${basefilename}.c"
 
-gcc ${cfile}
+gcc -lgc ${cfile}
